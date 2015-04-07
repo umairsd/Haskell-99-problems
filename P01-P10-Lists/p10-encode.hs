@@ -1,5 +1,5 @@
 {-| 
-P9: Run-length encoding of a list. Use the result of problem P09 to implement the 
+P10: Run-length encoding of a list. Use the result of problem P09 to implement the 
 so-called run-length encoding data compression method. Consecutive duplicates 
 of elements are encoded as lists (N E) where N is the number of duplicates of 
 the element E.
@@ -17,5 +17,5 @@ import Data.List (group)
 
 -- Instead of 'group', I could also use the 'pack' function defined in the solution 
 -- to the problem-09
-encodeList :: (Eq a) => [a] -> [(a,Int)]
-encodeList = map (\xs -> (head xs, length xs)) . group
+encodeList :: (Eq a) => [a] -> [(Int, a)]
+encodeList = map (\xs -> (length xs, head xs)) . group
