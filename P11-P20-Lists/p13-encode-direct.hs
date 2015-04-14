@@ -33,3 +33,4 @@ countElements x [] = [(1,x)]
 countElements x (y@(a,b):ys)
     | x == b = (a+1,b):ys
     | otherwise = (1, x):y:ys
+
