@@ -10,8 +10,9 @@ Source: (https://wiki.haskell.org/99_questions/11_to_20)
 -}
 
 
--- Returns the removed element if the indices are within range. Otherwise, 
--- returns Nothing
+
+-- If the indices are within range, returns (Just removedElement, UpdatedList)
+-- Otherwise, returns (Nothing, OriginalList)
 removeAt :: Int -> [a] -> (Maybe a, [a])
 removeAt _ [] = (Nothing, [])
 removeAt i y@(x:xs) 
