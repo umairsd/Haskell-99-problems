@@ -14,7 +14,5 @@ Source: (https://wiki.haskell.org/99_questions/31_to_41)
 {-# OPTIONS_GHC -Wall #-}
 
 coprime :: Integer -> Integer -> Bool
-coprime x y = case (gcd x y) of
-    1 -> True
-    _ -> False
+coprime x y = (gcd x y) == 1
 
