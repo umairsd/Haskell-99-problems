@@ -13,7 +13,6 @@ Source: (https://wiki.haskell.org/99_questions/31_to_41)
 
 {-# OPTIONS_GHC -Wall #-}
 
-
 primeFactors :: Int -> [Int]
 primeFactors n = case allFactors n of 
     []    -> [n]
