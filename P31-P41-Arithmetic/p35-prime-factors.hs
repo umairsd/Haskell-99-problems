@@ -11,14 +11,15 @@ E.g.
 Source: (https://wiki.haskell.org/99_questions/31_to_41)
 -}
 
-{-# OPTIONS_GHC -Wall #-}
+import Primes(primeFactors)
 
-primeFactors :: Int -> [Int]
-primeFactors n = case allFactors n of 
-    []    -> [n]
-    (x:_) -> x : primeFactors (n `div` x)
+{- 
+NOTE:
 
+As the function primeFactors is going to be reused in the next few problems, I moved
+this function into a separate file (Primes.hs) so that it can be reused as a module
 
-allFactors :: Int -> [Int]
-allFactors n = filter (\x -> n `mod` x == 0) [2..n-1]
+I simply need to import the Primes module, and we are set. 
 
+Usage: load this file in ghci, and then you can use the function primeFactors
+-}
