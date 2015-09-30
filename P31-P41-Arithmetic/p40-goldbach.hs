@@ -10,7 +10,7 @@ that sum up to a given even integer.
 
 Example in Haskell:
 
-P29> goldbach 28
+> goldbach 28
 (5,23)
 
 Source: (https://wiki.haskell.org/99_questions/31_to_41)

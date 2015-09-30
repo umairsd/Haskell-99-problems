@@ -6,7 +6,7 @@ Given a range of integers by its lower and upper limit, construct a list of all 
 
 Example in Haskell:
 
-P29> primesR 10 20
+> primesR 10 20
 [11,13,17,19]
 
 Source: (https://wiki.haskell.org/99_questions/31_to_41)
