@@ -16,14 +16,17 @@ Example in Haskell:
 Source: (https://wiki.haskell.org/99_questions/31_to_41)
 -}
 
-{-# OPTIONS_GHC -Wall #-}
 
-import qualified Primes
+import Primes(goldbach)
 
-goldbach :: Integer -> (Integer, Integer)
-goldbach n 
-    | n <= 2 || n `mod` 2 /= 0   = error "Goldbach conjecture is for even numbers greater than 2"
-    | otherwise = (a, b)
-        where
-            a = head $ filter (\x -> Primes.isPrime x && Primes.isPrime (n-x)) $ [0..n]
-            b = n - a
+{- 
+NOTE:
+
+As the function goldbach is going to be reused in the next problem, I moved it 
+function into a separate file (Primes.hs) so that it can be reused as a module
+
+I simply need to import the Primes module, and we are set. 
+
+Usage: load this file in ghci, and then you can use the function goldbach
+-}
+

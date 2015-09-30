@@ -52,3 +52,14 @@ allFactors n = filter (\x -> n `mod` x == 0) [2..n-1]
 -- P36
 primeFactorsMult :: Int -> [(Int, Int)]
 primeFactorsMult = map (\xs -> (head xs, length xs)) . Data.List.group . primeFactors
+
+
+
+-- P40
+goldbach :: Integer -> (Integer, Integer)
+goldbach n 
+    | n <= 2 || n `mod` 2 /= 0   = error "Goldbach conjecture is for even numbers greater than 2"
+    | otherwise = (a, b)
+        where
+            a = head $ filter (\x -> isPrime x && isPrime (n-x)) $ [0..n]
+            b = n - a
