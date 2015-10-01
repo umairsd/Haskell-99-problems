@@ -23,3 +23,7 @@ Source: (https://wiki.haskell.org/99_questions/46_to_50)
 
 {-# OPTIONS_GHC -Wall #-}
 
+
+table :: (Bool -> Bool -> Bool) -> IO()
+table f = mapM_ putStrLn [show x ++ " " ++ show y ++ " " ++ show (f x y) | x <- [False, True], y <- [False, True]]
+
