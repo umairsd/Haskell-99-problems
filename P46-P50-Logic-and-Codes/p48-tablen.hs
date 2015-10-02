@@ -30,4 +30,6 @@ Source: (https://wiki.haskell.org/99_questions/46_to_50)
 import Control.Monad(replicateM)
 
 tablen :: Int -> ([Bool] -> Bool) -> IO()
-tablen n f = mapM_ putStrLn $ map (\xs -> (unwords . map show) xs ++ " ---> " ++ show (f xs) ) $ replicateM n [False, True]
+tablen n f = mapM_ putStrLn $ map (\xs -> (unwords . map printWithPadding) xs ++ " ---> " ++ show (f xs) ) $ replicateM n [False, True]
+    where
+        printWithPadding x = show x ++ if x then " " else "" 
